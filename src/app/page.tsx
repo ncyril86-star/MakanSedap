@@ -866,7 +866,7 @@ function LandingPage() {
                 {/* Address */}
                 <div className="flex gap-6 text-white">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-14 w-14 bg-[#151921] shadow-xl border border-white/5">
+                    <div className="flex items-center justify-center">
                       <img
                         src="/location.svg"
                         alt=""
@@ -889,7 +889,7 @@ function LandingPage() {
                 {/* Phone */}
                 <div className="flex gap-6 text-white">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-14 w-14 bg-[#151921] shadow-xl border border-white/5">
+                    <div className="flex items-center justify-center">
                       <img
                         src="/phone.svg"
                         alt=""
@@ -911,7 +911,7 @@ function LandingPage() {
                 {/* Email */}
                 <div className="flex gap-6 text-white">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-14 w-14 bg-[#151921] shadow-xl border border-white/5">
+                    <div className="flex items-center justify-center">
                       <img
                         src="/email.svg"
                         alt=""
