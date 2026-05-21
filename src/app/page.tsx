@@ -49,9 +49,9 @@ function LandingPage() {
         <img
           src="/chef.svg"
           alt=""
-          width={28}
-          height={28}
-          className="h-7 w-7 object-contain"
+          width={32}
+          height={32}
+          className="h-8 w-8 object-contain"
           aria-hidden="true"
         />
       ),
@@ -64,9 +64,9 @@ function LandingPage() {
         <img
           src="/dinner.svg"
           alt=""
-          width={28}
-          height={28}
-          className="h-7 w-7 object-contain"
+          width={32}
+          height={32}
+          className="h-8 w-8 object-contain"
           aria-hidden="true"
         />
       ),
@@ -79,9 +79,9 @@ function LandingPage() {
         <img
           src="/shopping-cart.svg"
           alt=""
-          width={28}
-          height={28}
-          className="h-7 w-7 object-contain"
+          width={32}
+          height={32}
+          className="h-8 w-8 object-contain"
           aria-hidden="true"
         />
       ),
@@ -94,9 +94,9 @@ function LandingPage() {
         <img
           src="/24h-service.svg"
           alt=""
-          width={28}
-          height={28}
-          className="h-7 w-7 object-contain"
+          width={32}
+          height={32}
+          className="h-8 w-8 object-contain"
           aria-hidden="true"
         />
       ),
