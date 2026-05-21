@@ -866,8 +866,15 @@ function LandingPage() {
                 {/* Address */}
                 <div className="flex gap-6 text-white">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-14 w-14 bg-[#151921] text-[#d4af37] shadow-xl border border-white/5">
-                      <MapPin size={24} strokeWidth={2} />
+                    <div className="flex items-center justify-center h-14 w-14 bg-[#151921] shadow-xl border border-white/5">
+                      <img
+                        src="/location.svg"
+                        alt=""
+                        width={32}
+                        height={32}
+                        className="h-8 w-8 object-contain"
+                        aria-hidden="true"
+                      />
                     </div>
                   </div>
                   <div>
