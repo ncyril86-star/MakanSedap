@@ -49,9 +49,9 @@ function LandingPage() {
         <img
           src="/chef.svg"
           alt=""
-          width={20}
-          height={20}
-          className="h-5 w-5 object-contain"
+          width={28}
+          height={28}
+          className="h-7 w-7 object-contain"
           aria-hidden="true"
         />
       ),
@@ -671,9 +671,9 @@ function LandingPage() {
                 <img
                   src="/crown.svg"
                   alt=""
-                  width={18}
-                  height={18}
-                  className="h-[18px] w-[18px] shrink-0 object-contain"
+                  width={26}
+                  height={26}
+                  className="h-[26px] w-[26px] shrink-0 object-contain"
                   aria-hidden="true"
                 />
               </span>
