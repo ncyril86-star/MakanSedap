@@ -864,7 +864,7 @@ function LandingPage() {
 
               <div className="space-y-10">
                 {/* Address */}
-                <div className="flex gap-6 text-white">
+                <div className="flex items-center gap-6 text-white">
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center">
                       <img
