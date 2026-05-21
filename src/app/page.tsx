@@ -1010,9 +1010,9 @@ function LandingPage() {
                   <img
                     src="/location.svg"
                     alt=""
-                    width={18}
-                    height={18}
-                    className="h-[18px] w-[18px] shrink-0 object-contain"
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 shrink-0 object-contain"
                     aria-hidden="true"
                   />
                   <span>LOT 683, BLOCK 9, JALAN PUJUT-LUTONG, C.D.T. 20, 98009 MIRI, SARAWAK</span>
