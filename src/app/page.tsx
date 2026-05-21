@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState, Suspense } from 'react';
-import { Utensils, ShoppingCart, Headset, Star } from 'lucide-react';
+import { ShoppingCart, Headset, Star } from 'lucide-react';
 import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
 
 const HERO_HEADLINE_LINES = ['Enjoy hundreds of', 'flavors under', 'one roof'] as const;
@@ -60,7 +60,16 @@ function LandingPage() {
       title: 'Quality Food',
       copy: 'Fresh ingredients with great taste in every bite.',
       cardClass: 'border-t border-[#d4af37]/20 px-8 py-10 md:border-l md:border-t-0 lg:border-[#d4af37]/25',
-      icon: <Utensils strokeWidth={2.1} size={20} />,
+      icon: (
+        <img
+          src="/dinner.svg"
+          alt=""
+          width={28}
+          height={28}
+          className="h-7 w-7 object-contain"
+          aria-hidden="true"
+        />
+      ),
     },
     {
       title: 'Online Order',
