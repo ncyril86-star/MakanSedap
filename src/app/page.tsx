@@ -466,9 +466,6 @@ function LandingPage() {
         }
 
         .feature-slice:hover .feature-slice-icon {
-          color: #fde5ba;
-          border-color: rgba(253, 229, 186, 0.75);
-          box-shadow: 0 10px 28px rgba(217, 160, 76, 0.22);
           transform: translateY(-2px) scale(1.07);
         }
 
@@ -737,7 +734,7 @@ function LandingPage() {
                     transitionDuration: `${cardFadeDurationMs}ms`,
                   }}
                 >
-                  <div className="feature-slice-icon inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d4af37]/40 text-[#d4af37]">
+                  <div className="feature-slice-icon inline-flex h-11 w-11 items-center justify-center">
                     {card.icon}
                   </div>
                   <h3 className="feature-slice-title mt-6 text-[1.95rem] font-medium leading-[1.08] tracking-[0.01em] text-white">{card.title}</h3>
