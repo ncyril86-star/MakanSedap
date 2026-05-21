@@ -1012,7 +1012,7 @@ function LandingPage() {
                     alt=""
                     width={24}
                     height={24}
-                    className="h-6 w-6 shrink-0 object-contain"
+                    className="-ml-1 h-6 w-6 shrink-0 object-contain"
                     aria-hidden="true"
                   />
                   <span>LOT 683, BLOCK 9, JALAN PUJUT-LUTONG, C.D.T. 20, 98009 MIRI, SARAWAK</span>
