@@ -1006,13 +1006,13 @@ function LandingPage() {
             >
               <p className="text-base font-bold text-white mb-4">Contact</p>
               <ul className="space-y-3 text-base text-white/70">
-                <li className="flex items-start gap-2">
+                <li className="flex items-center gap-2">
                   <img
                     src="/location.svg"
                     alt=""
                     width={18}
                     height={18}
-                    className="h-[18px] w-[18px] shrink-0 object-contain mt-1"
+                    className="h-[18px] w-[18px] shrink-0 object-contain"
                     aria-hidden="true"
                   />
                   <span>LOT 683, BLOCK 9, JALAN PUJUT-LUTONG, C.D.T. 20, 98009 MIRI, SARAWAK</span>
