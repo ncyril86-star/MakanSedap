@@ -1,26 +1,29 @@
 'use client';
 
-import { useEffect, useState, type RefObject } from 'react';
+import { useLayoutEffect, useState, type RefObject } from 'react';
 
 const MOBILE_BREAKPOINT = 768;
-const MAX_OFFSET_PX = 64;
 
 /**
- * Subtle scroll parallax for a section. Disabled on mobile and when user prefers reduced motion.
+ * Scroll-linked parallax: background moves slower as you scroll through a section.
+ * Disabled on mobile and when the user prefers reduced motion.
  */
 export function useParallax(
   ref: RefObject<HTMLElement | null>,
-  speed = 0.35
+  speed = 0.45
 ): number {
   const [offset, setOffset] = useState(0);
 
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
+  useLayoutEffect(() => {
     let frame = 0;
 
     const update = () => {
+      const element = ref.current;
+      if (!element) {
+        setOffset(0);
+        return;
+      }
+
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
 
@@ -32,15 +35,15 @@ export function useParallax(
       const rect = element.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      if (rect.bottom < 0 || rect.top > viewportHeight) {
+      if (rect.bottom <= 0 || rect.top >= viewportHeight) {
         setOffset(0);
         return;
       }
 
-      const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
-      const clamped = Math.max(0, Math.min(1, progress));
-      const centered = (clamped - 0.5) * 2;
-      setOffset(centered * speed * MAX_OFFSET_PX);
+      const scrollIntoSection = Math.max(0, window.scrollY - element.offsetTop);
+      const maxTravel = element.offsetHeight * 0.4;
+      const travel = Math.min(scrollIntoSection, maxTravel);
+      setOffset(travel * speed);
     };
 
     const onScroll = () => {
@@ -52,10 +55,14 @@ export function useParallax(
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
 
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    motionQuery.addEventListener('change', onScroll);
+
     return () => {
       cancelAnimationFrame(frame);
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
+      motionQuery.removeEventListener('change', onScroll);
     };
   }, [ref, speed]);
 

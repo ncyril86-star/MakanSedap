@@ -35,8 +35,8 @@ function LandingPage() {
   const featureStripRef = useRef<HTMLElement | null>(null);
   const heroSectionRef = useRef<HTMLElement | null>(null);
   const aboutSectionRef = useRef<HTMLElement | null>(null);
-  const heroParallaxY = useParallax(heroSectionRef, 0.4);
-  const aboutParallaxY = useParallax(aboutSectionRef, 0.32);
+  const heroParallaxY = useParallax(heroSectionRef, 0.5);
+  const aboutParallaxY = useParallax(aboutSectionRef, 0.42);
   const tickerItems = [
     'Dine-In - Takeaway - Delivery',
     'Halal Certified',
