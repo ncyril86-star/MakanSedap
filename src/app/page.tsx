@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState, Suspense } from 'react';
 import { Star } from 'lucide-react';
+import { useParallax } from '@/hooks/useParallax';
 
 const HERO_HEADLINE_LINES = ['Enjoy hundreds of', 'flavors under', 'one roof'] as const;
 const HERO_TYPING_SPEED_MS = 75;
@@ -32,6 +33,10 @@ function LandingPage() {
     footer: false,
   });
   const featureStripRef = useRef<HTMLElement | null>(null);
+  const heroSectionRef = useRef<HTMLElement | null>(null);
+  const aboutSectionRef = useRef<HTMLElement | null>(null);
+  const heroParallaxY = useParallax(heroSectionRef, 0.4);
+  const aboutParallaxY = useParallax(aboutSectionRef, 0.32);
   const tickerItems = [
     'Dine-In - Takeaway - Delivery',
     'Halal Certified',
@@ -530,11 +535,15 @@ function LandingPage() {
 
       {/* Hero - Full Screen */}
       <section
+        ref={heroSectionRef}
         id="home"
         className="relative overflow-hidden min-h-screen flex items-center"
         data-section="hero"
       >
-        <div className="pointer-events-none absolute inset-0">
+        <div
+          className="pointer-events-none absolute inset-x-0 -top-[10%] h-[120%] will-change-transform"
+          style={{ transform: `translate3d(0, ${heroParallaxY}px, 0)` }}
+        >
           <video
             className="absolute inset-0 h-full w-full object-cover opacity-50"
             autoPlay
@@ -749,8 +758,9 @@ function LandingPage() {
 
       {/* About - Full Height */}
       <section
+        ref={aboutSectionRef}
         id="about"
-        className="bg-[#0b0f19] py-20"
+        className="bg-[#0b0f19] py-20 overflow-hidden"
         data-section="about"
       >
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 lg:grid-cols-2 lg:items-center">
@@ -770,7 +780,10 @@ function LandingPage() {
               className={`overflow-hidden border border-white/10 bg-white/5 animate-scale glow-animation ${visibleSections.about ? 'visible' : ''}`}
               style={{ animationDelay: visibleSections.about ? '0.1s' : '0s' }}
             >
-              <div className="relative aspect-[4/5] w-full overflow-hidden">
+              <div
+                className="relative aspect-[4/5] w-full overflow-hidden will-change-transform"
+                style={{ transform: `translate3d(0, ${aboutParallaxY}px, 0)` }}
+              >
                 <img
                   src="/chef.png"
                   alt="Our Master Chef"
