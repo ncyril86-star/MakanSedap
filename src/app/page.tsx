@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState, Suspense } from 'react';
-import { Headset, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
 
 const HERO_HEADLINE_LINES = ['Enjoy hundreds of', 'flavors under', 'one roof'] as const;
@@ -90,7 +90,16 @@ function LandingPage() {
       title: '24/7 Service',
       copy: 'Support for your dining flow whenever needed.',
       cardClass: 'border-t border-[#d4af37]/20 px-8 py-10 md:border-l lg:border-t-0 lg:border-[#d4af37]/25',
-      icon: <Headset strokeWidth={2.1} size={20} />,
+      icon: (
+        <img
+          src="/24h-service.svg"
+          alt=""
+          width={28}
+          height={28}
+          className="h-7 w-7 object-contain"
+          aria-hidden="true"
+        />
+      ),
     },
   ];
 
