@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState, Suspense } from 'react';
-import { ChefHat, Utensils, ShoppingCart, Headset, Crown, Star } from 'lucide-react';
+import { ChefHat, Utensils, ShoppingCart, Headset, Star } from 'lucide-react';
 import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
 
 const HERO_HEADLINE_LINES = ['Enjoy hundreds of', 'flavors under', 'one roof'] as const;
@@ -659,7 +659,14 @@ function LandingPage() {
                 className="inline-flex items-center gap-10 text-[0.72rem] font-semibold uppercase tracking-[0.20em] text-[#d4af37]"
               >
                 <span>{item}</span>
-                <Crown size={12} strokeWidth={2.1} className="shrink-0 text-[#d4af37]" aria-hidden="true" />
+                <img
+                  src="/crown.svg"
+                  alt=""
+                  width={18}
+                  height={18}
+                  className="h-[18px] w-[18px] shrink-0 object-contain"
+                  aria-hidden="true"
+                />
               </span>
             ))}
           </div>
