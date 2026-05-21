@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState, Suspense } from 'react';
-import { ChefHat, Utensils, ShoppingCart, Headset, Star } from 'lucide-react';
+import { Utensils, ShoppingCart, Headset, Star } from 'lucide-react';
 import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
 
 const HERO_HEADLINE_LINES = ['Enjoy hundreds of', 'flavors under', 'one roof'] as const;
@@ -45,7 +45,16 @@ function LandingPage() {
       title: 'Master Chefs',
       copy: 'Crafted by experienced chefs, consistent quality.',
       cardClass: 'px-8 py-10',
-      icon: <ChefHat strokeWidth={2.1} size={20} />,
+      icon: (
+        <img
+          src="/chef.svg"
+          alt=""
+          width={20}
+          height={20}
+          className="h-5 w-5 object-contain"
+          aria-hidden="true"
+        />
+      ),
     },
     {
       title: 'Quality Food',
