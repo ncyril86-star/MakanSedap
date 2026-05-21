@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState, Suspense } from 'react';
 import { Star } from 'lucide-react';
-import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
 
 const HERO_HEADLINE_LINES = ['Enjoy hundreds of', 'flavors under', 'one roof'] as const;
 const HERO_TYPING_SPEED_MS = 75;
@@ -1007,16 +1006,37 @@ function LandingPage() {
             >
               <p className="text-base font-bold text-white mb-4">Contact</p>
               <ul className="space-y-3 text-base text-white/70">
-                <li className="flex items-center gap-2">
-                  <MapPin size={18} className="text-amber-400 shrink-0 mt-1" strokeWidth={2.5} />
+                <li className="flex items-start gap-2">
+                  <img
+                    src="/location.svg"
+                    alt=""
+                    width={18}
+                    height={18}
+                    className="h-[18px] w-[18px] shrink-0 object-contain mt-1"
+                    aria-hidden="true"
+                  />
                   <span>LOT 683, BLOCK 9, JALAN PUJUT-LUTONG, C.D.T. 20, 98009 MIRI, SARAWAK</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Phone size={18} className="text-amber-400 shrink-0" strokeWidth={2.5} />
+                  <img
+                    src="/phone.svg"
+                    alt=""
+                    width={18}
+                    height={18}
+                    className="h-[18px] w-[18px] shrink-0 object-contain"
+                    aria-hidden="true"
+                  />
                   <span>+60 12-345 6789</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Mail size={18} className="text-amber-400 shrink-0" strokeWidth={2.5} />
+                  <img
+                    src="/email.svg"
+                    alt=""
+                    width={18}
+                    height={18}
+                    className="h-[18px] w-[18px] shrink-0 object-contain"
+                    aria-hidden="true"
+                  />
                   <span>hello@makansedap.com</span>
                 </li>
               </ul>
